@@ -1,6 +1,10 @@
 ﻿@page
 @model Tasker.Pages.IndexModel
 
+@{
+    ViewData["Title"] = "Index";
+}
+
 <h1>All Tasks</h1>
 
 <table>
@@ -12,16 +16,15 @@
             <th>Priority</th>
         </tr>
     </thead>
-
-    @{ foreach (var task in Model.Tasks)
-        {
-            <tr>
-                <td>@task.Id</td>
-                <td>@task.Title</td>
-                <td>@task.Description</td>
-                <td>@task.Priority</td>
-            </tr>
-        }}
+    @foreach (var task in Model.Tasks)
+    {
+        <tr>
+            <td>@task.Id</td>
+            <td>@task.Title</td>
+            <td>@task.Description</td>
+            <td>@task.Priority</td>
+        </tr>
+    }
 </table>
 @{
 }
