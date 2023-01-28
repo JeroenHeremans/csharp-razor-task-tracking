@@ -7,25 +7,29 @@
 
 <h1>All Tasks</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Priority</th>
-        </tr>
-    </thead>
-    @foreach (var task in Model.Tasks)
-    {
-        <tr>
-            <td>@task.Id</td>
-            <td>@task.Title</td>
-            <td>@task.Description</td>
-            <td>@task.Priority</td>
-        </tr>
-    }
-</table>
+@if (Model.Tasks.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        @foreach (var task in Model.Tasks)
+        {
+            <tr>
+                <td>@task.Id</td>
+                <td>@task.Title</td>
+                <td>@task.Description</td>
+                <td>@task.Priority</td>
+            </tr>
+        }
+    </table>
+}
+
 @{
 }
 
